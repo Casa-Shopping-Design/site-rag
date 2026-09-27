@@ -1,2 +1,2 @@
 rag-ingestao[postgres,openai,pdf,docx,xlsx,tokens] @ git+https://github.com/joaocss/rag-ingestao-incremental.git@5ba5c20
-python-dotenv>=1.0
+python-dotenv>=1.2.3
