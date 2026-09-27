@@ -12,9 +12,12 @@ src/app/              páginas, rotas /api/chat e /api/leads, login por link
 src/components/       layout, seções, formulário de lead e o widget do assistente
 src/lib/              leitura do conteúdo, clientes Supabase, prompt e chamada ao modelo
 supabase/migrations/  esquema da rag-ingestao, lojas e perfis, visibilidade, busca e leads
-supabase/tests/       testes de isolamento (pgTAP)
+supabase/tests/       testes de isolamento e de ataque (pgTAP)
+tests/                testes de unidade, ponta a ponta e auditoria de acessibilidade
+avaliacao/            corpus fictício e script de avaliação do assistente
 ingestao/             script que envia documentos para a base com o nível escolhido
-docs/                 decisões e o que falta de conteúdo
+docs/                 decisões, conteúdo pendente, LGPD e qualidade
+.github/              CI e Dependabot
 ```
 
 ## Como rodar
@@ -30,7 +33,6 @@ npm run dev
 Banco, com a CLI do Supabase logada:
 
 ```bash
-supabase init                 # só na primeira vez, cria o config.toml
 supabase link --project-ref <ref>
 supabase db push
 supabase db push --include-seed   # cadastra os lojistas levantados (conferir antes)
@@ -72,8 +74,32 @@ Para a equipe da administração, o papel é `admin` e não precisa de vínculo 
 
 O lojista entra pela página /entrar com um link enviado por e-mail. Quem não foi cadastrado não consegue criar conta pelo site.
 
+## Testes
+
+```bash
+npm run teste          # unidade (Vitest), sem rede nem banco
+npm run teste:e2e      # ponta a ponta (Playwright) numa pilha local simulada
+npm run acessibilidade # axe-core nas páginas públicas, com o site rodando
+npm run contraste      # contraste dos pares de cor do globals.css
+supabase test db       # isolamento e ataques no banco (pgTAP)
+```
+
+O que cada camada cobre e o que ela precisa para rodar está em `tests/README.md`. A avaliação do assistente com corpus fictício está em `docs/avaliacao-assistente.md`.
+
+## CI e qualidade
+
+Todo push na `main` e todo pull request rodam `.github/workflows/ci.yml`, com três jobs:
+
+- web: `npm ci`, ESLint, `tsc --noEmit`, `next build` com variáveis falsas e `npm run teste` (Vitest).
+- banco: sobe o Postgres local com a CLI do Supabase e roda `supabase test db`, que inclui os quatro testes obrigatórios de isolamento. Depende do `supabase/config.toml` gerado pelo `supabase init`. Enquanto ele não estiver commitado, esse job falha avisando o motivo.
+- ingestao: Python 3.11, instala `ingestao/requirements.txt`, roda ruff e pyflakes e confere que `enviar.py --help` abre.
+
+O workflow não usa segredo nenhum. O Dependabot (`.github/dependabot.yml`) abre pull requests semanais para npm, pip e GitHub Actions.
+
+A matriz da ISO/IEC 25010 está em `docs/qualidade-iso25010.md`. O tratamento de dados pessoais está em `docs/lgpd-ripd.md` e a resposta a incidente em `docs/lgpd-plano-incidente.md`, os dois ainda em rascunho para validação jurídica.
+
 ## Deploy
 
 Vercel, com as variáveis do `.env.example`. A service_role do Supabase não entra na Vercel: ela só é usada na ingestão, na máquina da administração.
 
-Em Authentication > URL Configuration do Supabase, coloque o domínio do site em Site URL e `https://<domínio>/auth/confirmar` em Redirect URLs.
+O passo a passo completo, do commit ao site de teste no ar num endereço `*.vercel.app`, está em `docs/deploy-teste.md`. Enquanto o site não estiver no domínio oficial, ele sai com `noindex`.

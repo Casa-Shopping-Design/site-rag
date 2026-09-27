@@ -1,11 +1,12 @@
 import type { MetadataRoute } from 'next'
 
-import { site } from '@/lib/conteudo'
+import { enderecoDoSite, podeIndexar } from '@/lib/endereco'
 
 export default function robots(): MetadataRoute.Robots {
-  const base = process.env.NEXT_PUBLIC_SITE_URL || site.url
+  if (!podeIndexar()) return { rules: { userAgent: '*', disallow: '/' } }
+
   return {
     rules: { userAgent: '*', allow: '/', disallow: ['/area-do-lojista', '/entrar', '/api/'] },
-    sitemap: `${base}/sitemap.xml`,
+    sitemap: `${enderecoDoSite()}/sitemap.xml`,
   }
 }

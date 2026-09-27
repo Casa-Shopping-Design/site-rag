@@ -1,9 +1,9 @@
 import type { MetadataRoute } from 'next'
 
-import { site } from '@/lib/conteudo'
+import { enderecoDoSite } from '@/lib/endereco'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = process.env.NEXT_PUBLIC_SITE_URL || site.url
+  const base = enderecoDoSite()
   return ['', '/lojas', '/locacao', '/contato', '/privacidade'].map((caminho) => ({
     url: `${base}${caminho}`,
     changeFrequency: 'weekly',

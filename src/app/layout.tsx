@@ -1,21 +1,40 @@
 import type { Metadata, Viewport } from 'next'
-import '@fontsource-variable/fraunces'
-import '@fontsource-variable/inter'
+import localFont from 'next/font/local'
 
 import Assistente from '@/components/assistente/assistente'
 import Navbar from '@/components/layout/navbar'
 import Rodape from '@/components/layout/rodape'
 import { site } from '@/lib/conteudo'
+import { enderecoDoSite, podeIndexar } from '@/lib/endereco'
 import { AVISO_CONSENTIMENTO } from '@/lib/lgpd'
 import { dadosEstruturados } from '@/lib/seo'
 
 import './globals.css'
 
+// Arquivos do fontsource, so o subconjunto latin (cobre o portugues). O next/font
+// faz o preload e cria uma fonte de reserva com metrica ajustada, o que evita pulo
+// de layout quando a fonte chega.
+const fonteTexto = localFont({
+  src: '../../node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2',
+  weight: '100 900',
+  display: 'swap',
+  variable: '--fonte-texto',
+})
+
+const fonteTitulo = localFont({
+  src: '../../node_modules/@fontsource-variable/fraunces/files/fraunces-latin-wght-normal.woff2',
+  weight: '100 900',
+  display: 'swap',
+  variable: '--fonte-titulo',
+  adjustFontFallback: 'Times New Roman',
+})
+
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || site.url),
+  metadataBase: new URL(enderecoDoSite()),
   title: { default: site.seo.titulo, template: site.seo.template },
   description: site.descricaoCurta,
   keywords: site.seo.palavrasChave,
+  robots: podeIndexar() ? undefined : { index: false, follow: false },
 }
 
 export const viewport: Viewport = {
@@ -24,7 +43,7 @@ export const viewport: Viewport = {
 
 export default function LayoutRaiz({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" className={`${fonteTexto.variable} ${fonteTitulo.variable}`}>
       <body className="flex min-h-dvh flex-col">
         <a
           href="#conteudo"
