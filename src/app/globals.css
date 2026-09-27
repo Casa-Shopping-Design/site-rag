@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+/* Identidade atual do CSD Centro Empresarial: vinho com salmao. */
+:root {
+  --fundo: #faf6f4;
+  --superficie: #ffffff;
+  --texto: #221a1c;
+  --texto-suave: #6b5c60;
+  --primaria: #7e1a3c;
+  --destaque: #b8453a;
+  --destaque-claro: #fbe2dc;
+  --salmao: #f09483;
+  --borda: #eadcd8;
+  --raio: 0.75rem;
+  /* Fontes servidas pelo proprio site (fontsource), sem depender do Google no build */
+  --fonte-texto: 'Inter Variable';
+  --fonte-titulo: 'Fraunces Variable';
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fundo: #161113;
+    --superficie: #20181b;
+    --texto: #f5eeef;
+    --texto-suave: #bcaaaf;
+    --primaria: #f3a8b8;
+    --destaque: #f09483;
+    --destaque-claro: #3a2227;
+    --salmao: #f09483;
+    --borda: #382a2e;
+  }
+}
+
+@theme inline {
+  --color-fundo: var(--fundo);
+  --color-superficie: var(--superficie);
+  --color-texto: var(--texto);
+  --color-texto-suave: var(--texto-suave);
+  --color-primaria: var(--primaria);
+  --color-destaque: var(--destaque);
+  --color-destaque-claro: var(--destaque-claro);
+  --color-borda: var(--borda);
+  --color-salmao: var(--salmao);
+  --radius-padrao: var(--raio);
+  --font-titulo: var(--fonte-titulo);
+  --font-texto: var(--fonte-texto);
+}
+
+body {
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: var(--fonte-texto), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--fonte-titulo), Georgia, serif;
+  letter-spacing: -0.01em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--destaque);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

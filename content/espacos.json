@@ -1,0 +1,38 @@
+[
+  {
+    "id": "lojas",
+    "titulo": "Lojas comerciais",
+    "tipo": "Loja",
+    "area": "",
+    "piso": "",
+    "descricao": "Lojas com vitrine voltada para os corredores do centro.",
+    "disponivel": true
+  },
+  {
+    "id": "salas",
+    "titulo": "Salas comerciais",
+    "tipo": "Sala",
+    "area": "",
+    "piso": "",
+    "descricao": "Para escritórios, consultórios e prestadores de serviço.",
+    "disponivel": true
+  },
+  {
+    "id": "auditorio",
+    "titulo": "Auditório",
+    "tipo": "Eventos",
+    "area": "",
+    "piso": "",
+    "descricao": "Para palestras, treinamentos e reuniões. Consulte a disponibilidade.",
+    "disponivel": true
+  },
+  {
+    "id": "eventos",
+    "titulo": "Espaço para eventos",
+    "tipo": "Eventos",
+    "area": "",
+    "piso": "",
+    "descricao": "Consulte a administração sobre datas, capacidade e formato.",
+    "disponivel": true
+  }
+]

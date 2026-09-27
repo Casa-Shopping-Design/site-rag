@@ -1,0 +1,48 @@
+{
+  "nome": "Casa Shopping Design",
+  "nomeCurto": "Casa Design",
+  "complemento": "Centro Empresarial",
+  "idioma": "pt_BR",
+  "url": "https://casashoppingdesign.com.br",
+  "descricaoCurta": "Centro empresarial no Ponto Novo, em Aracaju, com salas e lojas comerciais, auditório e espaço para eventos.",
+  "chamada": "Negócios que geram negócios",
+  "subchamada": "Qualidade para quem vende e para quem compra. Lojas, clínicas, escritórios e escolas no mesmo endereço, com estacionamento na porta.",
+  "sobre": [
+    "O Casa Shopping Design é um centro empresarial na Avenida Augusto Franco, no Ponto Novo. Tem salas e lojas comerciais, auditório e espaço para eventos.",
+    "Hoje reúne imobiliárias, clínicas e consultórios, escolas e cursos, escritórios de serviços e lojas de casa e construção. O centro já passou dos 20 anos e continua com a mesma ideia: juntar no mesmo lugar quem vende e quem compra."
+  ],
+  "endereco": "Av. Augusto Franco, 2980",
+  "bairro": "Ponto Novo",
+  "cidade": "Aracaju",
+  "estado": "SE",
+  "cep": "49097-670",
+  "mapaEmbedUrl": "https://www.google.com/maps?q=Av.+Augusto+Franco,+2980,+Ponto+Novo,+Aracaju+-+SE,+49097-670&output=embed",
+  "linkMapa": "https://www.google.com/maps/search/?api=1&query=Av.+Augusto+Franco,+2980,+Ponto+Novo,+Aracaju+-+SE,+49097-670",
+  "horarios": [
+    { "dias": "Segunda a sexta", "horario": "8h às 18h" },
+    { "dias": "Sábado", "horario": "9h às 12h" },
+    { "dias": "Domingo e feriados", "horario": "PREENCHER" }
+  ],
+  "observacaoHorario": "Algumas lojas funcionam em horário próprio.",
+  "estacionamento": "Estacionamento próprio em frente às lojas.",
+  "contato": {
+    "whatsapp": "",
+    "telefone": "(79) 3259-0410",
+    "email": "",
+    "instagram": "https://www.instagram.com/casashoppingdesign"
+  },
+  "segmentos": [
+    { "nome": "Imóveis", "descricao": "Imobiliárias, lançamentos e correspondente bancário." },
+    { "nome": "Saúde e estética", "descricao": "Odontologia, fisioterapia e pilates, nutrição, cuidados com o cabelo e beleza." },
+    { "nome": "Educação e cursos", "descricao": "Graduação, pós-graduação, cursos livres e escola de oratória." },
+    { "nome": "Serviços para empresas", "descricao": "Contabilidade, consultoria, propaganda e gráfica rápida." },
+    { "nome": "Casa e construção", "descricao": "Mármores e granitos, purificadores de água, energia solar e utilidades para o lar." },
+    { "nome": "Moda e alimentação", "descricao": "Loja de roupas, café e alimentação." }
+  ],
+  "seo": {
+    "titulo": "Casa Shopping Design | Centro empresarial em Aracaju",
+    "template": "%s | Casa Shopping Design",
+    "palavrasChave": ["casa shopping design", "centro empresarial aracaju", "salas comerciais aracaju", "lojas para alugar aracaju", "auditório aracaju", "ponto novo aracaju"],
+    "imagemCompartilhamento": "/images/estacionamento.webp"
+  }
+}

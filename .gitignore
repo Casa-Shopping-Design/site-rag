@@ -1,0 +1,23 @@
+/node_modules
+/.next/
+/out/
+/build
+/coverage
+.DS_Store
+*.pem
+npm-debug.log*
+.env*
+!.env.example
+!ingestao/.env.example
+.vercel
+*.tsbuildinfo
+next-env.d.ts
+
+# ingestao
+.venv/
+__pycache__/
+ingestao/arquivos/
+
+# supabase cli
+supabase/.temp/
+supabase/.branches/
