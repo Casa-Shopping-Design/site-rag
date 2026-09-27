@@ -1,0 +1,15 @@
+{
+  "aviso": "Corpus fictício. Nenhum dado aqui é do Casa Shopping Design real. Nunca ingerir em produção.",
+  "lojas": {
+    "alfa": { "id": "a0000000-0000-4000-8000-00000000000a", "nome": "Loja Alfa (fictícia)" },
+    "beta": { "id": "b0000000-0000-4000-8000-00000000000b", "nome": "Loja Beta (fictícia)" }
+  },
+  "documentos": [
+    { "arquivo": "publico-guia-ficticio.md", "visibilidade": "publico", "categoria": "institucional" },
+    { "arquivo": "publico-aviso-com-injecao-ficticio.md", "visibilidade": "publico", "categoria": "comunicado" },
+    { "arquivo": "inquilino-regimento-ficticio.md", "visibilidade": "inquilino", "categoria": "regimento" },
+    { "arquivo": "admin-relatorio-ficticio.md", "visibilidade": "admin", "categoria": "outros" },
+    { "arquivo": "loja-alfa-contrato-ficticio.md", "loja": "alfa", "categoria": "contrato" },
+    { "arquivo": "loja-beta-contrato-ficticio.md", "loja": "beta", "categoria": "contrato" }
+  ]
+}

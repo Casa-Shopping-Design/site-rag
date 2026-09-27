@@ -8,20 +8,20 @@ function CartaoLoja({ loja }: { loja: Loja }) {
       <p className="font-medium text-primaria">{loja.nome}</p>
       {loja.descricao && <p className="mt-1 text-sm text-texto-suave">{loja.descricao}</p>}
       {local && <p className="mt-2 text-xs text-texto-suave">{local}</p>}
-      <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-sm">
+      <div className="mt-2 flex flex-wrap gap-x-5 text-sm">
         {loja.telefone && (
-          <a href={`tel:+55${loja.telefone.replace(/\D/g, '')}`} className="text-primaria hover:text-destaque">
+          <a href={`tel:+55${loja.telefone.replace(/\D/g, '')}`} className="inline-block py-2 text-primaria hover:text-destaque">
             {loja.telefone}
           </a>
         )}
         {loja.instagram && (
-          <a href={loja.instagram} target="_blank" rel="noreferrer" className="text-primaria hover:text-destaque">
-            Instagram
+          <a href={loja.instagram} target="_blank" rel="noreferrer" className="inline-block py-2 text-primaria hover:text-destaque">
+            Instagram <span className="sr-only">de {loja.nome} (abre em nova aba)</span>
           </a>
         )}
         {loja.site && (
-          <a href={loja.site} target="_blank" rel="noreferrer" className="text-primaria hover:text-destaque">
-            Site
+          <a href={loja.site} target="_blank" rel="noreferrer" className="inline-block py-2 text-primaria hover:text-destaque">
+            Site <span className="sr-only">de {loja.nome} (abre em nova aba)</span>
           </a>
         )}
       </div>

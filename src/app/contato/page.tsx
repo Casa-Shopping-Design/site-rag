@@ -18,13 +18,14 @@ export default function PaginaContato() {
   return (
     <>
       <Container className="pt-16">
-        <TituloSecao rotulo="Contato" titulo="Administração do centro" />
+        <TituloSecao rotulo="Contato" titulo="Administração do centro" principal />
         {temContato ? (
           <ul className="mt-6 space-y-2 text-sm">
             {whatsapp && (
               <li>
                 <a href={whatsapp} target="_blank" rel="noreferrer" className="text-destaque hover:underline">
-                  Conversar pelo WhatsApp
+                  Conversar pelo WhatsApp{' '}
+                  <span className="sr-only">(abre em nova aba)</span>
                 </a>
               </li>
             )}
@@ -37,7 +38,7 @@ export default function PaginaContato() {
             {preenchido(instagram) && (
               <li>
                 <a href={instagram} target="_blank" rel="noreferrer" className="hover:text-destaque">
-                  Instagram
+                  Instagram <span className="sr-only">(abre em nova aba)</span>
                 </a>
               </li>
             )}

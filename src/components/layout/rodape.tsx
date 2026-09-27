@@ -19,17 +19,18 @@ export default function Rodape() {
           {preenchido(email) && <p>{email}</p>}
           {preenchido(instagram) && (
             <a href={instagram} className="hover:text-destaque" target="_blank" rel="noreferrer">
-              Instagram
+              Instagram <span className="sr-only">(abre em nova aba)</span>
             </a>
           )}
         </div>
-        <div className="flex flex-col gap-1 text-texto-suave sm:items-end">
-          <Link href="/locacao" className="hover:text-destaque">Quero alugar um espaço</Link>
-          <Link href="/area-do-lojista" className="hover:text-destaque">Área do lojista</Link>
-          <Link href="/privacidade" className="hover:text-destaque">Privacidade</Link>
+        <div className="flex flex-col items-start text-texto-suave sm:items-end">
+          <Link href="/locacao" className="py-1.5 hover:text-destaque">Quero alugar um espaço</Link>
+          <Link href="/area-do-lojista" className="py-1.5 hover:text-destaque">Área do lojista</Link>
+          <Link href="/privacidade" className="py-1.5 hover:text-destaque">Privacidade</Link>
         </div>
       </Container>
-      <Container className="pb-8 text-xs text-texto-suave">
+      {/* Folga embaixo para o botao do assistente nao cobrir a ultima linha no celular */}
+      <Container className="pb-24 text-xs text-texto-suave sm:pb-8">
         © {new Date().getFullYear()} {site.nome}
       </Container>
     </footer>

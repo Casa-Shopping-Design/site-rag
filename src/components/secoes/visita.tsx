@@ -25,10 +25,10 @@ export default function Visita() {
                     {h.dias}: {h.horario}
                   </dd>
                 ))}
+                {preenchido(site.observacaoHorario) && (
+                  <dd className="mt-1 text-xs text-texto-suave">{site.observacaoHorario}</dd>
+                )}
               </div>
-            )}
-            {preenchido(site.observacaoHorario) && horarios.length > 0 && (
-              <dd className="-mt-4 text-xs text-texto-suave">{site.observacaoHorario}</dd>
             )}
             {preenchido(site.contato.telefone) && (
               <div>
@@ -52,9 +52,9 @@ export default function Visita() {
               href={site.linkMapa}
               target="_blank"
               rel="noreferrer"
-              className="mt-6 inline-block text-sm text-destaque hover:underline"
+              className="mt-4 inline-block py-2 text-sm text-destaque underline-offset-4 hover:underline"
             >
-              Abrir no Google Maps
+              Abrir no Google Maps <span className="sr-only">(abre em nova aba)</span>
             </a>
           )}
         </div>

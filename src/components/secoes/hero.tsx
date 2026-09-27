@@ -30,12 +30,14 @@ export default function Hero() {
           </div>
         </div>
         <div className="relative aspect-[4/5] overflow-hidden rounded-padrao border border-borda sm:aspect-[4/3] lg:aspect-[4/5]">
+          {/* 484px: coluna da direita do max-w-6xl no desktop */}
           <Image
             src="/images/estacionamento.webp"
             alt="Fachada do Casa Shopping Design com o estacionamento em frente"
             fill
-            priority
-            sizes="(min-width: 1024px) 40vw, 100vw"
+            preload
+            fetchPriority="high"
+            sizes="(min-width: 1024px) 484px, 100vw"
             className="object-cover"
           />
           <div className="absolute inset-x-0 bottom-0 h-2 bg-salmao" aria-hidden />

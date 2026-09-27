@@ -16,7 +16,7 @@ export default async function PaginaLojas() {
 
   return (
     <Container className="py-16">
-      <TituloSecao rotulo="Lojistas" titulo="Lojistas do centro" />
+      <TituloSecao rotulo="Lojistas" titulo="Lojistas do centro" principal />
       <ListaLojas lojas={lojas} />
     </Container>
   )

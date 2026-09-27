@@ -18,11 +18,12 @@ export default function Sobre() {
             </p>
           ))}
           <div className="relative mt-8 aspect-[3/2] overflow-hidden rounded-padrao border border-borda">
+            {/* 528px: metade do max-w-6xl no desktop */}
             <Image
               src="/images/lounge.webp"
               alt="Área de convivência com poltronas no corredor central"
               fill
-              sizes="(min-width: 1024px) 45vw, 100vw"
+              sizes="(min-width: 1024px) 528px, 100vw"
               className="object-cover"
             />
           </div>

@@ -25,7 +25,7 @@ export default async function Inicio() {
           <div className="flex flex-wrap items-end justify-between gap-4">
             <TituloSecao rotulo="Lojistas" titulo="Quem está no Casa Design" />
             {lojas.length > 0 && (
-              <Link href="/lojas" className="text-sm text-destaque hover:underline">
+              <Link href="/lojas" className="inline-block py-2 text-sm text-destaque underline-offset-4 hover:underline">
                 Ver contatos e segmentos
               </Link>
             )}

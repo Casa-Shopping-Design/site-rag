@@ -11,10 +11,11 @@
   --destaque-claro: #fbe2dc;
   --salmao: #f09483;
   --borda: #eadcd8;
+  /* Contorno de campo precisa de 3:1 contra o fundo (WCAG 1.4.11); a --borda fica para divisorias */
+  --borda-campo: #94787f;
+  --foco: #b8453a;
   --raio: 0.75rem;
-  /* Fontes servidas pelo proprio site (fontsource), sem depender do Google no build */
-  --fonte-texto: 'Inter Variable';
-  --fonte-titulo: 'Fraunces Variable';
+  /* --fonte-texto e --fonte-titulo vem do next/font em src/app/layout.tsx */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -28,6 +29,8 @@
     --destaque-claro: #3a2227;
     --salmao: #f09483;
     --borda: #382a2e;
+    --borda-campo: #7d6a6f;
+    --foco: #f09483;
   }
 }
 
@@ -40,10 +43,18 @@
   --color-destaque: var(--destaque);
   --color-destaque-claro: var(--destaque-claro);
   --color-borda: var(--borda);
+  --color-borda-campo: var(--borda-campo);
+  --color-foco: var(--foco);
   --color-salmao: var(--salmao);
   --radius-padrao: var(--raio);
   --font-titulo: var(--fonte-titulo);
   --font-texto: var(--fonte-texto);
+}
+
+html {
+  /* Cabecalho fixo em cima e botao do assistente embaixo nao podem esconder o item focado (WCAG 2.4.11) */
+  scroll-padding-top: 8rem;
+  scroll-padding-bottom: 6rem;
 }
 
 body {
@@ -59,8 +70,10 @@ h1, h2, h3 {
 }
 
 :focus-visible {
-  outline: 2px solid var(--destaque);
+  outline: 2px solid var(--foco);
   outline-offset: 2px;
+  /* Aro claro entre o elemento e o contorno, para o foco aparecer tambem sobre a faixa vinho */
+  box-shadow: 0 0 0 2px var(--fundo);
 }
 
 @media (prefers-reduced-motion: reduce) {

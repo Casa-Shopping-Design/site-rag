@@ -17,6 +17,7 @@ export default function PaginaLocacao() {
     <Container className="grid gap-12 py-16 lg:grid-cols-[1.2fr_1fr]">
       <div>
         <TituloSecao
+          principal
           rotulo="Locação"
           titulo="Salas, lojas e auditório"
           texto="Valores, metragens e disponibilidade são passados pela administração."

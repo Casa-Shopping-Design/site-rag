@@ -21,3 +21,7 @@ ingestao/arquivos/
 # supabase cli
 supabase/.temp/
 supabase/.branches/
+
+# testes
+tests/e2e/.resultados/
+playwright-report/
