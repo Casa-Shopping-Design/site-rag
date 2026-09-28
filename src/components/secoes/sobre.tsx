@@ -10,21 +10,22 @@ export default function Sobre() {
   return (
     <section className="py-20">
       <Container className="grid gap-12 lg:grid-cols-2">
-        <div>
+        <div className="flex flex-col">
           <TituloSecao rotulo="O centro" titulo="Um endereço para fazer negócio" />
           {paragrafos.map((texto) => (
             <p key={texto} className="mt-4 text-texto-suave">
               {texto}
             </p>
           ))}
-          <div className="relative mt-8 aspect-[4/3] overflow-hidden rounded-padrao border border-borda">
+          {/* No desktop a foto ocupa a altura que sobra ao lado dos cartoes, sem deixar vao */}
+          <div className="relative mt-8 aspect-[4/3] overflow-hidden rounded-padrao border border-borda lg:aspect-auto lg:min-h-56 lg:flex-1">
             {/* 528px: metade do max-w-6xl no desktop */}
             <Image
-              src="/images/tour/claraboia.jpg"
-              alt="Praça central sob uma claraboia redonda, com poltronas e plantas"
+              src="/images/tour/entrada.jpg"
+              alt="Entrada do centro pela Avenida Augusto Franco, com marquise, jardim e carros estacionados"
               fill
               sizes="(min-width: 1024px) 528px, 100vw"
-              className="object-cover object-[center_25%]"
+              className="object-cover object-[center_40%]"
             />
           </div>
         </div>

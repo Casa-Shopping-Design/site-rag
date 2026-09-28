@@ -51,10 +51,10 @@
   },
   "galeria": [
     { "imagem": "/images/tour/estacionamento.jpg", "legenda": "Estacionamento em frente às lojas", "alt": "Estacionamento de piso intertravado com carros e coqueiros, em dia de sol" },
-    { "imagem": "/images/tour/entrada.jpg", "legenda": "Entrada pela Augusto Franco", "alt": "Acesso de carros ao centro, com marquise e jardim na entrada" },
     { "imagem": "/images/tour/corredor.jpg", "legenda": "Corredores cobertos", "alt": "Corredor coberto e iluminado, com vitrines de vidro dos dois lados" },
     { "imagem": "/images/tour/claraboia.jpg", "legenda": "Praça central com claraboia", "alt": "Área central sob uma claraboia redonda, com poltronas e plantas" },
     { "imagem": "/images/tour/convivencia.jpg", "legenda": "Espaço de convivência", "alt": "Área de convivência com banco de madeira ao lado de uma vitrine" },
+    { "imagem": "/images/tour/carrara.jpg", "legenda": "Lojas de casa e construção", "alt": "Vitrine de vidro da Carrara Mármores e Granitos, com o estacionamento refletido" },
     { "imagem": "/images/tour/vitrines.jpg", "legenda": "Vitrines voltadas para o estacionamento", "alt": "Loja com vitrine de vidro e decoração azul e prata, com vista para o estacionamento" }
   ],
   "seo": {

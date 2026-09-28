@@ -160,7 +160,7 @@ Os dois documentos da base aparecem como `publico` e têm trechos.
    Deixe `NEXT_PUBLIC_SITE_URL` de fora por enquanto.
 4. Deploy. Quando terminar, vá em Settings > Domains e copie o endereço de produção (algo como `site-rag-xxxx.vercel.app`).
 5. Cadastre `NEXT_PUBLIC_SITE_URL` com esse endereço, com `https://` e sem barra no fim. Depois, em Deployments, abra o último e clique em Redeploy. As variáveis `NEXT_PUBLIC_*` entram no build, então só valem depois do redeploy.
-6. Em Settings > Functions, confira que a região é `gru1` (São Paulo), perto do banco.
+6. A região das funções é `gru1` (São Paulo), perto do banco. Ela está fixada em `vercel.json`, que vale mais que o painel. Para conferir, o cabeçalho `x-vercel-id` de `/entrar` tem que ser `gru1::gru1::...`; `gru1::iad1` quer dizer que a função rodou nos EUA.
 
 Sobre a proteção de deploy: a Vercel protege com login os endereços únicos de cada deploy e os de preview. O endereço de produção (o que está em Domains) fica aberto. É ele que você manda para quem vai testar.
 
