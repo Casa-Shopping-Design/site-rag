@@ -1,6 +1,7 @@
 import Link from 'next/link'
 
 import Container from '@/components/layout/container'
+import Galeria from '@/components/secoes/galeria'
 import Hero from '@/components/secoes/hero'
 import ListaLojas from '@/components/secoes/lista-lojas'
 import Perguntas from '@/components/secoes/perguntas'
@@ -18,8 +19,9 @@ export default async function Inicio() {
 
   return (
     <>
-      <Hero />
+      <Hero quantidadeLojas={lojas.length} />
       <Sobre />
+      <Galeria />
       <section className="border-y border-borda bg-superficie py-20">
         <Container>
           <div className="flex flex-wrap items-end justify-between gap-4">

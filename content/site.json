@@ -7,6 +7,11 @@
   "descricaoCurta": "Centro empresarial no Ponto Novo, em Aracaju, com salas e lojas comerciais, auditório e espaço para eventos.",
   "chamada": "Negócios que geram negócios",
   "subchamada": "Qualidade para quem vende e para quem compra. Lojas, clínicas, escritórios e escolas no mesmo endereço, com estacionamento na porta.",
+  "destaques": [
+    { "valor": "20 anos", "rotulo": "no Ponto Novo" },
+    { "valor": "Seg a sáb", "rotulo": "atendimento no local" },
+    { "valor": "Na porta", "rotulo": "estacionamento próprio" }
+  ],
   "sobre": [
     "O Casa Shopping Design é um centro empresarial na Avenida Augusto Franco, no Ponto Novo. Tem salas e lojas comerciais, auditório e espaço para eventos.",
     "Hoje reúne imobiliárias, clínicas e consultórios, escolas e cursos, escritórios de serviços e lojas de casa e construção. O centro já passou dos 20 anos e continua com a mesma ideia: juntar no mesmo lugar quem vende e quem compra."
@@ -39,10 +44,23 @@
     { "nome": "Casa e construção", "descricao": "Mármores e granitos, purificadores de água, energia solar e utilidades para o lar." },
     { "nome": "Moda e alimentação", "descricao": "Loja de roupas, café e alimentação." }
   ],
+  "tour": {
+    "video": "/videos/tour.mp4",
+    "poster": "/images/tour/poster-tour.jpg",
+    "descricao": "Vídeo curto passando pelas vitrines e pelo estacionamento do Casa Shopping Design"
+  },
+  "galeria": [
+    { "imagem": "/images/tour/estacionamento.jpg", "legenda": "Estacionamento em frente às lojas", "alt": "Estacionamento de piso intertravado com carros e coqueiros, em dia de sol" },
+    { "imagem": "/images/tour/entrada.jpg", "legenda": "Entrada pela Augusto Franco", "alt": "Acesso de carros ao centro, com marquise e jardim na entrada" },
+    { "imagem": "/images/tour/corredor.jpg", "legenda": "Corredores cobertos", "alt": "Corredor coberto e iluminado, com vitrines de vidro dos dois lados" },
+    { "imagem": "/images/tour/claraboia.jpg", "legenda": "Praça central com claraboia", "alt": "Área central sob uma claraboia redonda, com poltronas e plantas" },
+    { "imagem": "/images/tour/convivencia.jpg", "legenda": "Espaço de convivência", "alt": "Área de convivência com banco de madeira ao lado de uma vitrine" },
+    { "imagem": "/images/tour/vitrines.jpg", "legenda": "Vitrines voltadas para o estacionamento", "alt": "Loja com vitrine de vidro e decoração azul e prata, com vista para o estacionamento" }
+  ],
   "seo": {
     "titulo": "Casa Shopping Design | Centro empresarial em Aracaju",
     "template": "%s | Casa Shopping Design",
     "palavrasChave": ["casa shopping design", "centro empresarial aracaju", "salas comerciais aracaju", "lojas para alugar aracaju", "auditório aracaju", "ponto novo aracaju"],
-    "imagemCompartilhamento": "/images/estacionamento.webp"
+    "imagemCompartilhamento": "/images/tour/estacionamento.jpg"
   }
 }

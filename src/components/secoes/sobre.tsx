@@ -17,14 +17,14 @@ export default function Sobre() {
               {texto}
             </p>
           ))}
-          <div className="relative mt-8 aspect-[3/2] overflow-hidden rounded-padrao border border-borda">
+          <div className="relative mt-8 aspect-[4/3] overflow-hidden rounded-padrao border border-borda">
             {/* 528px: metade do max-w-6xl no desktop */}
             <Image
-              src="/images/lounge.webp"
-              alt="Área de convivência com poltronas no corredor central"
+              src="/images/tour/claraboia.jpg"
+              alt="Praça central sob uma claraboia redonda, com poltronas e plantas"
               fill
               sizes="(min-width: 1024px) 528px, 100vw"
-              className="object-cover"
+              className="object-cover object-[center_25%]"
             />
           </div>
         </div>

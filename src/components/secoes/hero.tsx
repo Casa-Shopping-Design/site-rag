@@ -2,9 +2,15 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import Container from '@/components/layout/container'
-import { site } from '@/lib/conteudo'
+import VideoTour from '@/components/secoes/video-tour'
+import { preenchido, site } from '@/lib/conteudo'
 
-export default function Hero() {
+export default function Hero({ quantidadeLojas = 0 }: { quantidadeLojas?: number }) {
+  const destaques = [
+    ...(quantidadeLojas > 0 ? [{ valor: String(quantidadeLojas), rotulo: 'lojistas e serviços' }] : []),
+    ...site.destaques.filter((d) => preenchido(d.valor)),
+  ]
+
   return (
     <section className="border-b border-borda">
       <Container className="grid gap-10 py-14 sm:py-20 lg:grid-cols-[1.2fr_1fr] lg:items-center">
@@ -28,18 +34,30 @@ export default function Hero() {
               Alugar sala, loja ou auditório
             </Link>
           </div>
+          {destaques.length > 0 && (
+            <ul className="mt-10 grid grid-cols-2 gap-x-6 gap-y-5 border-t border-borda pt-6 sm:grid-cols-4">
+              {destaques.map((destaque) => (
+                <li key={destaque.rotulo}>
+                  <span className="block font-titulo text-2xl text-primaria">{destaque.valor}</span>
+                  <span className="block text-xs text-texto-suave">{destaque.rotulo}</span>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
-        <div className="relative aspect-[4/5] overflow-hidden rounded-padrao border border-borda sm:aspect-[4/3] lg:aspect-[4/5]">
-          {/* 484px: coluna da direita do max-w-6xl no desktop */}
+        <div className="relative aspect-[4/5] overflow-hidden rounded-padrao border border-borda bg-primaria sm:mx-auto sm:w-full sm:max-w-md lg:max-w-none">
+          {/* Imagem por baixo: aparece antes do video carregar e fica quando ele nao toca */}
+          {/* 484px: coluna da direita do max-w-6xl; 448px: max-w-md no tablet */}
           <Image
-            src="/images/estacionamento.webp"
-            alt="Fachada do Casa Shopping Design com o estacionamento em frente"
+            src={site.tour.poster}
+            alt=""
             fill
             preload
             fetchPriority="high"
-            sizes="(min-width: 1024px) 484px, 100vw"
+            sizes="(min-width: 1024px) 484px, (min-width: 640px) 448px, 100vw"
             className="object-cover"
           />
+          <VideoTour video={site.tour.video} poster={site.tour.poster} descricao={site.tour.descricao} />
           <div className="absolute inset-x-0 bottom-0 h-2 bg-salmao" aria-hidden />
         </div>
       </Container>

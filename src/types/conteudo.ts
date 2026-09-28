@@ -15,6 +15,17 @@ export type Contato = {
   instagram: string
 }
 
+export type Destaque = {
+  valor: string
+  rotulo: string
+}
+
+export type FotoGaleria = {
+  imagem: string
+  legenda: string
+  alt: string
+}
+
 export type Site = {
   nome: string
   nomeCurto: string
@@ -24,6 +35,7 @@ export type Site = {
   descricaoCurta: string
   chamada: string
   subchamada: string
+  destaques: Destaque[]
   sobre: string[]
   endereco: string
   bairro: string
@@ -37,6 +49,12 @@ export type Site = {
   estacionamento: string
   contato: Contato
   segmentos: Segmento[]
+  tour: {
+    video: string
+    poster: string
+    descricao: string
+  }
+  galeria: FotoGaleria[]
   seo: {
     titulo: string
     template: string
