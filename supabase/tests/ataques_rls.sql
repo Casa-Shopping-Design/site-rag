@@ -5,6 +5,10 @@
 
 begin;
 create extension if not exists pgtap with schema extensions;
+-- No banco remoto a CLI entra com um papel temporario que nao herda os privilegios
+-- de postgres; sem isto o pgtap em extensions fica invisivel.
+set local role postgres;
+set local search_path = public, extensions;
 
 select plan(75);
 
@@ -235,7 +239,7 @@ select throws_ok(
      values ('00000000-0000-0000-0000-0000000000a1', 'admin') $$,
   '42501', null, 'visitante: nao cria perfil');
 
-reset role;
+set local role postgres;
 
 
 -- Inquilino da loja A tentando sair da propria loja
@@ -309,7 +313,7 @@ select throws_ok(
   $$ select publicar_versao(gen_random_uuid()) $$,
   '42501', null, 'inquilino A: publicar_versao e negado');
 
-reset role;
+set local role postgres;
 
 
 -- Conferencia como postgres: nada do que foi tentado acima mudou o banco
@@ -362,7 +366,7 @@ select is(
 select is(
   (select count(*)::int from uso_consultas), 1, 'admin: le o uso do assistente');
 
-reset role;
+set local role postgres;
 
 select * from finish();
 rollback;

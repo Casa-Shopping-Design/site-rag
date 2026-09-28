@@ -3,6 +3,10 @@
 
 begin;
 create extension if not exists pgtap with schema extensions;
+-- No banco remoto a CLI entra com um papel temporario que nao herda os privilegios
+-- de postgres; sem isto o pgtap em extensions fica invisivel.
+set local role postgres;
+set local search_path = public, extensions;
 
 select plan(1);
 

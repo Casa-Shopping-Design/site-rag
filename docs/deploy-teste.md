@@ -88,7 +88,7 @@ Esse comando usa o Docker para rodar o `pg_prove`. Se você não tiver Docker, a
 Conferência:
 
 - Table Editor mostra as tabelas `lojas` (com os lojistas), `perfis`, `vinculos_loja`, `leads`, `documentos` e `trechos`.
-- Os 5 arquivos de teste passam (112 testes no total).
+- Os 4 arquivos de teste passam (112 testes no total).
 - Em Advisors > Security Advisor, o único aviso esperado é o das extensões no schema `public`. Ele já está registrado em `docs/seguranca.md`.
 
 ## 3. Configurar o login no Supabase

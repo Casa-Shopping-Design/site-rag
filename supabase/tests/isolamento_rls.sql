@@ -7,6 +7,10 @@
 
 begin;
 create extension if not exists pgtap with schema extensions;
+-- No banco remoto a CLI entra com um papel temporario que nao herda os privilegios
+-- de postgres; sem isto o pgtap em extensions fica invisivel.
+set local role postgres;
+set local search_path = public, extensions;
 
 select plan(27);
 
@@ -116,7 +120,7 @@ select throws_ok(
        array_fill(0.01::real, array[1536])::vector) $$,
   null, null, 'visitante: nao grava trecho');
 
-reset role;
+set local role postgres;
 
 
 -- Usuario logado sem perfil conta como visitante
@@ -129,7 +133,7 @@ select is(
     where visibilidade <> 'publico'),
   0, 'logado sem perfil: continua vendo so o publico');
 
-reset role;
+set local role postgres;
 
 
 -- 2 e 3. Inquilino da loja A
@@ -170,7 +174,7 @@ select is(
   (select count(*)::int from documentos where visibilidade = 'publico'),
   1, 'inquilino A: nao reclassifica documento');
 
-reset role;
+set local role postgres;
 
 
 -- Inquilino da loja B, espelho do anterior
@@ -187,7 +191,7 @@ select is(
     where id_loja = '10000000-0000-0000-0000-00000000000a'),
   0, 'inquilino B: nao le trecho da loja A');
 
-reset role;
+set local role postgres;
 
 
 -- 4. Administracao
@@ -205,7 +209,7 @@ select is((select count(*)::int from leads), 1, 'admin: le os leads');
 select is((select count(*)::int from versoes_documento), 5, 'admin: le as versoes');
 select is((select meu_perfil()), 'admin', 'admin: meu_perfil devolve admin');
 
-reset role;
+set local role postgres;
 
 select * from finish();
 rollback;
